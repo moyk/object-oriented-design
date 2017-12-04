@@ -1,0 +1,31 @@
+import java.util.*;
+
+public class CashRegister { 
+  public static int customerServed, serviceTimes, totalWaitTimes;
+  public static List<Customer> arrivaltime, servicetime;
+  
+  public CashRegister(){
+    customerServed = 0;
+    totalWaitTimes = 0;
+    arrivaltime = (List<Customer>)new List();
+    servicetime= (List<Customer>) new List();
+  }
+  public void servecustomer(customer c, int time){
+     servicetime.add(c);
+     servetimes =  2*c.howmanyitem() + 10;
+     addcustomerServed();
+     addtotalWaitTimes(time-c.arrivaltime);
+     arrivaltime.remove(0);
+  }
+  public void addtotalWaitTimes(int time){
+     totalWaitTimes = totalWaitTimes + time;
+  }
+  public void addServiceTime(int time){
+    int serveTime = servicetime + 2*c.howmanyitem(); 
+  }
+  public void addcustomerServed(){
+     customerServed++;
+  }
+  
+  
+}

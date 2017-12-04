@@ -1,0 +1,17 @@
+package hw.hw3;
+
+public class Uniform implements ItemDistribution{
+
+	private int distSize; // want to keep track of this
+
+	public Uniform(int distSize) {
+		this.distSize = distSize;
+	}
+
+	@Override
+	public int getItems() { // throw an appropriate random number out
+		int n = (int) (Math.random() * distSize);
+		return n;
+	}
+
+}

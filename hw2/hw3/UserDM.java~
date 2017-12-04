@@ -1,0 +1,30 @@
+package hw2;
+
+/*
+ * UserDM.java only implements DecisionMaking.java.
+ */
+import javax.swing.JOptionPane;
+
+public class UserDM implements DecisionMaking {
+ 
+ private String name;
+ 
+ public UserDM(String name){ // it takes a string value to remember the name of the player
+  this.name = name;
+ }
+
+ public boolean decide(Stat stat, int chips, int succession) { // prompts the user for decision, not formula
+  Object[] options = { "Take the pot", "Keep rolling" };
+  String msg = "You have " + chips + " chips.\n" + 
+    stat.pot() + " chips are in the pot.\nMake a wise decision...\n(Next: " + (succession+1) + " dice)";
+  
+  int response = JOptionPane.showOptionDialog(null, msg, name, JOptionPane.DEFAULT_OPTION, 
+    JOptionPane.WARNING_MESSAGE, null, options, options[0]);
+  
+  if (response == 1)
+   return true;
+  else
+   return false;
+ } 
+
+}

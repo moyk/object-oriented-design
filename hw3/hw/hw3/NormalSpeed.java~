@@ -1,0 +1,21 @@
+package hw.hw3;
+
+public class NormalSpeed implements Cashier { // implements Cashier
+
+ @Override
+ public boolean elapseOneSecond(Customer currentCust) { // now works for CashRegisters, telling Customers to serviceTime--;
+  // exactly same code below except for addition of returning boolean values where appropriate
+  // Return if there is no current customer.
+  if (currentCust == null)
+   return false;
+  // Otherwise, process the current customer.
+  currentCust.elapseOneSecond();
+  if(currentCust.isFinished()) 
+   return true;
+  return false;
+ } 
+
+ public String toString(){
+  return "Normal";
+ }
+}

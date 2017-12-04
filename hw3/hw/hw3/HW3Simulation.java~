@@ -1,0 +1,71 @@
+package hw.hw3;
+
+import java.util.Scanner;
+
+public class HW3Simulation {
+ private static final int SIMULATION_TIME = 50000;  // A simulation is for 10,000 seconds.
+
+ public static void main(String[] args) {
+  Scanner scan = new Scanner(System.in); // initializes scanner
+  
+  int normal, fast, distType, distSize; // some variables for input storage
+  String comparemethod;
+  ItemDistribution id;
+  
+  System.out.println("How many normal speed registers?"); // user prompt
+  normal = Math.max(0, scan.nextInt()); // normal registers at least 0
+  System.out.println("How many high speed registers..?"); // user prompt
+  fast = Math.max(0, scan.nextInt()); // fast registers at least 0
+  while(true){ // persistently ask until user picks either 1 or 2
+   System.out.println("Identify item distribution type:\t1. Uniform\t2. Bimodal"); //user prompt
+   scan = new Scanner(System.in);
+   try{
+    distType = scan.nextInt(); // get that input
+   }catch(Exception e){
+    System.out.println("Invalid input. Please enter a number.");
+    continue;
+   }
+   if(distType != 1 && distType != 2){
+    System.out.println("Invalid input. Please enter either 1 or 2.");
+    continue;
+   }
+   break;
+  }
+  while(true){ // persistently ask until user picks a number
+   System.out.println("Identify item distribution size."); //user prompt
+   scan = new Scanner(System.in);
+   try{
+    distSize = scan.nextInt(); //fast registers
+   }catch(Exception e){
+    System.out.println("Invalid input. Please enter a number.");
+    continue;
+   }
+   distSize = Math.max(1, distSize);
+   break;
+  }
+  while(true){ // persistently ask until user picks a percentage
+   System.out.println("Select sorting method."); //user prompt
+   scan = new Scanner(System.in);
+   try{
+    comparemethod = scan.nextLine(); //fast registers
+   }catch(Exception e){
+    System.out.println("Invalid input. Please enter a string among 'x', 's', 'w'.");
+    continue;
+   }
+   break;
+  }
+  scan.close();
+  
+  if (distType == 1){
+    id = new Uniform(distSize);}
+  else{
+    id = new Bimodal(distSize);}    
+  
+  DiningHall hall = new DiningHall(normal, fast, id, comparemethod);
+  
+  for (int t=0; t<SIMULATION_TIME; t++) {
+   hall.elapseOneSecond(t);
+  }
+  hall.printStatistics();
+ }
+}

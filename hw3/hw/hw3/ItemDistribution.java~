@@ -1,0 +1,5 @@
+package hw.hw3;
+
+public interface ItemDistribution { // one-method strategy interface for item distribution type
+	public int getItems();
+}

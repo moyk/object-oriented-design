@@ -1,0 +1,6 @@
+package hw.hw3;
+
+public interface Cashier { // another interface for speed type
+	public boolean elapseOneSecond(Customer currentCust); // now does this for CashRegisters
+	public String toString(); // just another convenient method
+}

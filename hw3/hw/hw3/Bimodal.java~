@@ -1,0 +1,18 @@
+package hw.hw3;
+
+public class Bimodal implements ItemDistribution{
+	
+	private int distSize; // wanna keep track of this
+
+	public Bimodal(int distSize) {
+		this.distSize = distSize;
+	}
+
+	@Override
+	public int getItems() { // throw out a bimodally appropriate random number
+		int n = distSize / 2;
+		while(n > distSize/4 && n < (3 * distSize / 4))
+			n = (int) (Math.random() * distSize);
+		return n;
+	}	
+}

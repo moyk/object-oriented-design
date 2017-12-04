@@ -1,0 +1,22 @@
+package hw2;
+
+/*
+ * RiskTakerDM.java only implements DecisionMaking
+ */
+
+public class RiskTakerDM implements DecisionMaking {
+ 
+ private final int riskFactor = 30;
+
+ public boolean decide(Stat stat, int chips, int succession) { // calculates its decision based on a constant factor
+  if((chips + stat.pot()) >= 30)
+   return false;
+  if(stat.pot() >= 3)
+   return (Math.random()*100) <= (riskFactor - (stat.pot()*succession));
+  if(succession >= 3)
+   return false;
+  
+  return (Math.random()*100) <= (3*riskFactor);
+ }
+
+}

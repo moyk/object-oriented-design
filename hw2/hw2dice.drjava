@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20140826-r5761">
+  <project autorefresh="false" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="Playdice.java" package="" timestamp="16-Sep-2016 11:45:56">
+        <select from="244" to="244"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="Human.java" package="" timestamp="16-Sep-2016 11:11:20">
+        <select from="244" to="244"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="Computer.java" package="" timestamp="16-Sep-2016 11:40:16">
+        <select from="244" to="244"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="Player.java" package="" timestamp="16-Sep-2016 11:46:57">
+        <select from="244" to="244"/>
+        <scroll column="0" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>

@@ -1,0 +1,22 @@
+package hw2;
+
+/*
+ * ConservativeDM.java only implements DecisionMaking
+ */
+
+public class ConservativeDM implements DecisionMaking {
+ 
+ private final int riskFactor = 20;
+
+ public boolean decide(Player player, int chips, int succession) { // more conservative characteristics
+  if((chips + player.pot()) >= 30)
+   return false;
+  if(succession == 1 && player.pot() >= 3)
+   return false;
+  if(succession >= 2)
+   return false;
+
+  return (Math.random()*100) <= (3*riskFactor);  
+ }
+
+}

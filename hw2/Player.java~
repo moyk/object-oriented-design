@@ -1,0 +1,36 @@
+public abstract class Player {
+  private int chipnum=0;
+  private int potnum=0
+  
+  public int returnchipnum(){
+     return chipnum;
+  }
+  
+  public bolean win(){
+     return chipnum==30;
+  }
+  
+  public int roll(int init){
+     chipnum += init;    //plus the initial chip
+     num=(int) (Math.random() * 5);
+     return changechipnum(num)
+       
+  }
+  public changechipnum(int num){
+    if (num==1){
+        chipnum = 0; 
+        return false;
+    }      
+    else{
+       chipnum += num;
+       return true;
+    }
+  } 
+  
+  public abstract makedecision();
+  
+
+  
+
+  
+}
